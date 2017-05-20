@@ -48,17 +48,24 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:drawableTop="@drawable/add_icon"
+            android:text="@string/btn1"
+            android:textColor="red"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:drawableTop="@drawable/add_icon"
+            android:text="@string/btn2"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:drawableTop="@drawable/add_icon"
+            android:text="@string/btn3"/>
 
     </LinearLayout>
 
