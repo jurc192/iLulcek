@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         timer.start();
     }
 
-    
+
     /**
      * Calculates estimated time of next peeing
      *
