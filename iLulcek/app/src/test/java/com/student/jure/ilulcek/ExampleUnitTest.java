@@ -1,4 +1,4 @@
-package com.example.jure.ilulcek;
+package com.student.jure.ilulcek;
 
 import org.junit.Test;
 

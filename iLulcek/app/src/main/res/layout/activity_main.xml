@@ -1,83 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.student.jure.ilulcek.MainActivity">
 
-    <TextView
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/timerView"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:padding="60dp"/>
+        android:background="@color/colorPrimary"/>
 
-    <com.mikhaellopez.circularprogressbar.CircularProgressBar
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        app:cpb_background_progressbar_color="#FFCDD2"
-        app:cpb_background_progressbar_width="5dp"
-        app:cpb_progressbar_color="#F44336"
-        app:cpb_progressbar_width="10dp"
-        app:cpb_progress="80"/>
-
-    <TextView
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/text1"
-        android:text="@string/text1"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:paddingTop="20dp"/>
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/text2"
-        android:text="@string/text2"
-        android:gravity="center"
-        android:paddingBottom="20sp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn0"
-        android:text="@string/button1"
-        android:layout_gravity="center"
-        android:layout_margin="40dp"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:onClick="pee"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/btn1"
-            android:text="@string/btn1"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/btn2"
-            android:text="@string/btn2"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/btn3"
-            android:text="@string/btn3"/>
-
-    </LinearLayout>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
