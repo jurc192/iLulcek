@@ -21,3 +21,24 @@ Lahko nrdim trik- activity ima barve za DARK THEME (bel font), fragmenti imajo b
 KAKO TO NAREDIT?! --DONE!
 
 Preštudiraj kaj si naredu v fragment onCreateView! (context, cloned inflater blabla...)
+
+ODLOČITEV: Ne bom uporabljal databaze- ni potrebno, preveč dela, enako dobro bo delalo tudi z localstorage.
+Zgodovino zapisujem v nek txt, json fajl- LOG. Nastavitve lahko v sharedPref?
+Če hočem najprej implementirat branje json/txt datoteke - kako dosežem to datoteko, oz kam naj jo shranim?
+OK, I give up - uporabljam databazo. Je očitno najbolj primerna
+
+Dober tutorial: http://www.androidhive.info/2013/09/android-sqlite-database-with-multiple-tables/ 
+https://www.youtube.com/watch?v=ge7m4nWmggs&t=262s 
+
+Jajcanje z ADB debug bridge, kako pogledat databaze na telefonu ipd.
+Uporabljam DB browser for SQLite http://sqlitebrowser.org/ 
+Za skopirat DB na komp @terminal:
+	$ adb shell
+	$ run-as com.student.jure.ilulcek
+	$ cp databases/lulcekdb /mnt/sdcard/
+	$ exit
+	$ exit
+	$ adb pull /mnt/sdcard/lulcekdb
+	
+	
+Kako se fila podatke v db? Moram naredit "model" classe?

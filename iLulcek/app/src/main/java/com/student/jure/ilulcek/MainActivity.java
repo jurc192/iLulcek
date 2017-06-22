@@ -1,5 +1,6 @@
 package com.student.jure.ilulcek;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
+
+    MyDatabaseHelper myDBhelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(myViewPager);
         myViewPager.setCurrentItem(1);
+
+
+        // database stuff
+        myDBhelper = new MyDatabaseHelper(this);
+        SQLiteDatabase db = myDBhelper.getWritableDatabase();
 
     }
 }
