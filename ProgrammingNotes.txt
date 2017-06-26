@@ -42,3 +42,10 @@ Za skopirat DB na komp @terminal:
 	
 	
 Kako se fila podatke v db? Moram naredit "model" classe?
+https://stackoverflow.com/questions/17451931/how-to-use-a-contract-class-in-android 
+https://stackoverflow.com/questions/9243361/what-is-a-contract-class-and-how-is-it-used 
+CONTRACT CLASS -> database schema class. Vse je static, nikoli ne instantiraš objekta. "Bunch of static final variables".
+HELPER -> 
+
+TEMPORARY rešitev - naredim "na grdo" samo sql stavke, da nafilam bazo in dokončam UI design.
+Potem pejdi naprej na optimizacijo in good practices :)

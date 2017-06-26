@@ -40,6 +40,17 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
     private static final String DROP_TABLE_NASTAVITVE = "DROP TABLE IF EXISTS"+TABLE_NASTAVITVE;
     private static final String DROP_TABLE_ZGODOVINA = "DROP TABLE IF EXISTS"+TABLE_ZGODOVINA;
 
+    // TEMPORARY SOLUTION
+    // TODO: implement contract class and get rid of SQL inserts
+    // DRINK, QTY, DATE, TIME
+    private static final String INSERT_ZGODOVINA = "INSERT INTO "+TABLE_ZGODOVINA
+            +" (DRINK, QTY, DATE, TIME) VALUES ('voda', 0.33, '22.06.2017', '16:27');";
+    private static final String INSERT_ZGODOVINA2 = "INSERT INTO "+TABLE_ZGODOVINA
+            +" (DRINK, QTY, DATE, TIME) VALUES ('vino', 0.50, '22.06.2017', '16:30');";
+    private static final String INSERT_ZGODOVINA3 = "INSERT INTO "+TABLE_ZGODOVINA
+            +" (DRINK, QTY, DATE, TIME) VALUES ('pivo', 0.50, '22.06.2017', '15:30');";
+    private static final String INSERT_NASTAVITVE = "INSERT INTO "+TABLE_NASTAVITVE
+            +" (SEX, AGE, WEIGHT) VALUES ('m', 20, 85);";
 
 
     public MyDatabaseHelper(Context context) {
@@ -48,10 +59,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        Log.d("TEST", "TEST LOG");
 
         try {
             db.execSQL(CREATE_TABLE_NASTAVITVE);
             db.execSQL(CREATE_TABLE_ZGODOVINA);
+            db.execSQL(INSERT_NASTAVITVE);
+            db.execSQL(INSERT_ZGODOVINA);
+            db.execSQL(INSERT_ZGODOVINA2);
+            db.execSQL(INSERT_ZGODOVINA3);
         } catch (SQLException e) {
             Log.d("DBHelper","ERROR at creating tables");
         }
