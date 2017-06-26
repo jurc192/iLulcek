@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 
 public class MyDatabaseHelper extends SQLiteOpenHelper{
@@ -27,14 +26,18 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
     private static final String AGE = "age";
     private static final String WEIGHT = "weight";
 
-    // Table create SQL statements
-    private static final String CREATE_TABLE_ZGODOVINA = "CREATE TABLE "+TABLE_ZGODOVINA
-            +"("+ID_ZGODOVINA+" INTEGER PRIMARY KEY AUTOINCREMENT, "
-            +TABLE_ZGODOVINA+" VARCHAR(255))";
+    private static final String CREATE_TABLE_ZGODOVINA = "CREATE TABLE zgodovina (" +
+            "id_zgodovina INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "drink VARCHAR(255)," +
+            "qty FLOAT," +
+            "date TEXT," +
+            "time TEXT);";
 
-    private static final String CREATE_TABLE_NASTAVITVE = "CREATE TABLE "+TABLE_NASTAVITVE
-            +"("+ID_NASTAVITVE+" INTEGER PRIMARY KEY AUTOINCREMENT, "
-            +TABLE_NASTAVITVE+" VARCHAR(255))";
+    private static final String CREATE_TABLE_NASTAVITVE = "CREATE TABLE nastavitve (" +
+        "id_nastavitve INTEGER PRIMARY KEY AUTOINCREMENT," +
+        "sex VARCHAR(16)," +
+        "age SMALLINT," +
+        "weight SMALLINT);";
 
     // Drop table statement
     private static final String DROP_TABLE_NASTAVITVE = "DROP TABLE IF EXISTS"+TABLE_NASTAVITVE;
@@ -59,7 +62,6 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.d("TEST", "TEST LOG");
 
         try {
             db.execSQL(CREATE_TABLE_NASTAVITVE);
@@ -68,8 +70,9 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
             db.execSQL(INSERT_ZGODOVINA);
             db.execSQL(INSERT_ZGODOVINA2);
             db.execSQL(INSERT_ZGODOVINA3);
+            System.out.println("CREATED TABLES!");
         } catch (SQLException e) {
-            Log.d("DBHelper","ERROR at creating tables");
+            System.out.println(e.toString());
         }
     }
 
@@ -81,7 +84,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
             db.execSQL(DROP_TABLE_ZGODOVINA);
             onCreate(db);
         } catch (SQLException e) {
-            Log.d("DBHelper","ERROR at dropping tables");
+            System.out.println(e.toString());
         }
 
     }

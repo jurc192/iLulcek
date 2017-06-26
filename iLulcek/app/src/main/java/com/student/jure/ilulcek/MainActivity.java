@@ -1,12 +1,13 @@
 package com.student.jure.ilulcek;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
-import android.util.Log;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Log.d("TEST", "LOGTEST @main");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -44,5 +43,28 @@ public class MainActivity extends AppCompatActivity {
         myDBhelper = new MyDatabaseHelper(this);
         SQLiteDatabase db = myDBhelper.getWritableDatabase();
 
+        //get all data
+//        Cursor query (
+//                String table,
+//                String[] columns,
+//                String selection,
+//                String[] selectionArgs,
+//                String groupBy,
+//                String having,
+//                String orderBy
+//                )
+
+        Cursor cursor = db.query("zgodovina", null, null, null, null, null, null);
+        StringBuffer buf = new StringBuffer();
+
+        while(cursor.moveToNext()) {
+            String drink = cursor.getString(1);
+            String qty = cursor.getString(2);
+            String time = cursor.getString(4);
+
+            buf.append(drink+" "+qty+" "+time+"\n");
+        }
+
+        System.out.println(buf.toString());
     }
 }

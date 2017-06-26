@@ -49,3 +49,30 @@ HELPER ->
 
 TEMPORARY rešitev - naredim "na grdo" samo sql stavke, da nafilam bazo in dokončam UI design.
 Potem pejdi naprej na optimizacijo in good practices :)
+
+PROBLEM: v db ni vnesenih podatkov. Je problem v kodi al v viewerju?
+Problem je bil v kodi - brainfart SQL query. SOLVED! :)
+
+Ok, zdej bazo znaš uporabljat. Kako naredit listview, tko kot je treba?
+Verjetno bom uporabil Simple cursor adapter?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
