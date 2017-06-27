@@ -27,14 +27,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
     private static final String WEIGHT = "weight";
 
     private static final String CREATE_TABLE_ZGODOVINA = "CREATE TABLE zgodovina (" +
-            "id_zgodovina INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
             "drink VARCHAR(255)," +
             "qty FLOAT," +
             "date TEXT," +
             "time TEXT);";
 
     private static final String CREATE_TABLE_NASTAVITVE = "CREATE TABLE nastavitve (" +
-        "id_nastavitve INTEGER PRIMARY KEY AUTOINCREMENT," +
+        "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
         "sex VARCHAR(16)," +
         "age SMALLINT," +
         "weight SMALLINT);";

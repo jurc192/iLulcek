@@ -22,6 +22,11 @@ KAKO TO NAREDIT?! --DONE!
 
 Preštudiraj kaj si naredu v fragment onCreateView! (context, cloned inflater blabla...)
 
+// Create a copy of the existing LayoutInflater object, with the copy pointing
+// to a different Context than the original. This is used by ContextThemeWrapper to create
+// a new LayoutInflater to go along with the new Context theme.
+TODO: poglej od slidenerd - layout inflater
+
 ODLOČITEV: Ne bom uporabljal databaze- ni potrebno, preveč dela, enako dobro bo delalo tudi z localstorage.
 Zgodovino zapisujem v nek txt, json fajl- LOG. Nastavitve lahko v sharedPref?
 Če hočem najprej implementirat branje json/txt datoteke - kako dosežem to datoteko, oz kam naj jo shranim?
@@ -56,6 +61,14 @@ Problem je bil v kodi - brainfart SQL query. SOLVED! :)
 Ok, zdej bazo znaš uporabljat. Kako naredit listview, tko kot je treba?
 Verjetno bom uporabil Simple cursor adapter?
 
+V Fragment.java usposobi listview. Zakaj v fragmentih nimaš "findViewById()"?
+V fragmentu lahko upravljaš UI elemente v "onActivityCreated()".
+Moraš dobit referenco na "parent" activity => getActivity().findViewById(). Oboje dela - in v ViewCreated in ActivityCreated?!
+
+Pogruntaj kam dat stvari od DB in kako dobit cursor data v Fragment! Kako strukturirat kodo, da se DB ne podvaja in da je legit.
+Dela za silo. TODO: Uredi DB stuff properly + query & loaderji & content providerji...
+
+NE BO ŠLO s simple cursor adapterjem - moraš vpisovat tudi custom stvari v listview :)
 
 
 

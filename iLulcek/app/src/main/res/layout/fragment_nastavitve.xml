@@ -5,10 +5,11 @@
     android:layout_height="match_parent"
     tools:context="com.student.jure.ilulcek.NastavitveFragment">
 
-    <TextView
+    <ListView
+        android:id="@+id/listview2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="FRAGMENT 0 - NASTAVITVE" />
+        android:layout_height="wrap_content">
+
+    </ListView>
 
 </FrameLayout>
