@@ -45,37 +45,32 @@ public class SettingsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        //1. get the root view; 2. use the root view to find other views; 3. set the values
 
-        //get the root view
-        //use the root view to find other views
-        //set the values
-        System.out.println("GETVIEW POSITION "+position);
         String[] titles = {"SEX", "AGE", "WEIGHT"};
-
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-//        if (convertView == null) {}
-//
-//        else {
-//            convertView = inflater.inflate(R.layout.list_row_settings, parent, false);
-//            return  convertView;
-//        }
+        if (convertView == null) {
 
-        View row = inflater.inflate(R.layout.list_row_settings, parent, false);
+            View row = inflater.inflate(R.layout.list_row_settings, parent, false);
 
-        TextView tv1 = (TextView) row.findViewById(R.id.list_text1);
-        TextView tv2 = (TextView) row.findViewById(R.id.list_text2);
+            TextView tv1 = (TextView) row.findViewById(R.id.list_text1);
+            TextView tv2 = (TextView) row.findViewById(R.id.list_text2);
 
-        String text1 = titles[position];
-        String text2 = cursor.getString(position+1);    //preskoci ID
+            String text1 = titles[position];
+            String text2 = cursor.getString(position+1);    //preskoci ID
 
-        System.out.println("TEXT1: "+text1);
-        System.out.println("TEXT2: "+text2);
+            tv1.setText(text1);
+            tv2.setText(text2);
 
-        tv1.setText(text1);
-        tv2.setText(text2);
+            return row;
 
-        return row;
+        } else {
+            // View recycling, optimization
+            return  convertView;
+        }
+
+
 
     }
 
