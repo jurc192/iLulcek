@@ -1,5 +1,5 @@
 ﻿
-int spol, starost, teza, prostorninaMehurja, kolicina;
+int spol, starost, teza, prostorninaMehurja, urinH, urinP;
 
 //PROSTORNINA MEHURJA
 if (spol == 0) //moski
@@ -16,13 +16,13 @@ if (starost > 40){
 	//razlaga stevilk: 40 so leta, 2 so mililitri
 }
 
-//KOLIKO URINA SE USTVARI V SEKUNDI IZ HRANE IN DIHANJA (predpostavimo, da okoli 1000 ml na dan)
-kolicina = 0,01; //ml
+//1. KOLIKO URINA SE USTVARI V SEKUNDI IZ HRANE IN DIHANJA (predpostavimo, da okoli 1000 ml na dan)
+urinH = 0,01; //ml
 
-//pol se pa premikamo po seznamu vnosa pijač (tistih, ki jih še nismo predelali v urin, za tiste predelane imamo drug seznam)
-int casPretvorbePijaceVLulanje = 10000;
+//2. KOLIKO URINA SE USTVARI V SEKUNDI IZ PIJAČ (premikamo se po seznamu vnosa pijač, morva se omejit, do kok nazaj greva, npr. 8 ur)
+int casPretvorbePijaceVLulanje = 10000; //kle sem si mal zmisnla, da vsaka pijača rabi 10000 sekund, da se pretvori v urin
 for (int i=0; i<seznam; i++){
-int kolicina2 = 0; // kok vsaka pijača prispeva k lulanju
+int urinP = 0; // kok vsaka pijača prispeva k lulanju
 	if ((trenutni čas - čas popitja pijače) >= casPretvorbePijaceVLulanje){
 		pijačo zbrišemo iz tega seznama, ker je ne rabimo več - > je še zmerej v zgodovini
 		i++;
@@ -30,12 +30,12 @@ int kolicina2 = 0; // kok vsaka pijača prispeva k lulanju
 	kolicina2 = pijaca.kolicina /casPretvorbePijaceVLulanje;
 
 	if (pijaca.diuretik == true && teža < 80 )
-		kolicina2*=1.2; //20% hitreje se pretvarja v urin
+		urinP*=1.2; //20% hitreje se pretvarja v urin
 	
 	else if (pijaca.diuretik == true && teža >= 80)
-		kolicina2*=1.1; //10% hitreje se pretvarja v urin -> če maš več kil, ta alkohol nate manj vpliva
+		urinP*=1.1; //10% hitreje se pretvarja v urin -> če maš več kil, ta alkohol nate manj vpliva
 
-	kolicina+= kolicina2;
+	urinH+= urinP;
 	i++;
 }
 
