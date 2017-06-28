@@ -25,38 +25,38 @@ public class SettingsAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-
         // To je fejkanje, zato da lahko iz ene vrstice iz DB naredim 3 vrstice v listu!
         return numItems;
     }
 
     @Override
     public Object getItem(int position) {
-    //še vedno mi ni jasno kateri je ta "position" row al column?!
-
+        // Zmeraj imam samo en "item" pri nastavitvah
         return cursor.getString(0);
     }
 
     @Override
     public long getItemId(int position) {
-        //WHAT IS THIS POSITION, should I move the cursor or what?
+        // Tega ne rabim zares, zmeraj imam samo en "item" pri nastavitvah
         return cursor.getInt(0);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        //1. get the root view; 2. use the root view to find other views; 3. set the values
 
         String[] titles = {"SEX", "AGE", "WEIGHT"};
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null) {
 
+            // Get the root view (=> list_row_settings.xml => LinearLayout)
             View row = inflater.inflate(R.layout.list_row_settings, parent, false);
 
+            // Use the root view to find other views
             TextView tv1 = (TextView) row.findViewById(R.id.list_text1);
             TextView tv2 = (TextView) row.findViewById(R.id.list_text2);
 
+            // Set the values for each view
             String text1 = titles[position];
             String text2 = cursor.getString(position+1);    //preskoci ID
 
@@ -66,11 +66,10 @@ public class SettingsAdapter extends BaseAdapter {
             return row;
 
         } else {
+
             // View recycling, optimization
             return  convertView;
         }
-
-
 
     }
 
