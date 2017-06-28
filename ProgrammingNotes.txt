@@ -68,7 +68,25 @@ Moraš dobit referenco na "parent" activity => getActivity().findViewById(). Obo
 Pogruntaj kam dat stvari od DB in kako dobit cursor data v Fragment! Kako strukturirat kodo, da se DB ne podvaja in da je legit.
 Dela za silo. TODO: Uredi DB stuff properly + query & loaderji & content providerji...
 
-NE BO ŠLO s simple cursor adapterjem - moraš vpisovat tudi custom stvari v listview :)
+NE BO ŠLO s simple cursor adapterjem - moraš vpisovat tudi custom stvari v listview :) 
+Npr pri settingsih fiksno: sex, age, weight; pri history "dan" in "lulanje"...
+
+BASE ADAPTER
+	|
+ARRAY ADAPTER, SIMPLE CURSOR ADAPTER, CURSOR ADAPTER,..
+
+Zaenkrat zgleda najbolj uporaben CursorAdapter? Lahko tudi implementiram svoj BaseAdapter za več kontrole.
+Probam najprej CursorAdapter. Dela.
+Kaj bi sploh rad spremenil? 
+- @settings: da piše SEX, AGE, WEIGHT; pod tem pa rezultat query-ja.
+- @history: da pri novem datumu napiše DAN in TODO lulanje, ko je lulal.
+
+Implementacija svojega base adapterja:
+vsako vrsto ki hoče nrdit - pokliče getView()
+v getSettingsData() preveri če se query uspešno izvede!
+
+Problem pri nastavitvah je, da imam EN row iz DBja -> preslika v en row lista.
+Jst hočem imet SEZNAM DBja - lažje bi blo s kakšnim arrayem al sharedPref al kaj...
 
 
 
