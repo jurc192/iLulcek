@@ -1,0 +1,40 @@
+﻿
+//ZAČETNI PARAMETRI
+
+//prostornina mehurja
+int prostorninaMehurjaMoski = 300 ml; //to ni zares volumen mehurja - ta je približno 500 ml, ampak napolnjenost mehurja, ko nas tišči lulat
+int prostorninaMehurjaZenska = 250 ml; //sicer naj bi oba spola imela približno enak velik mehur, a tu upoštevamo faktor, da imajo ženske bolj "natlačene" organe, krajšo sečnico, večkrat dobijo vnetje mehurja, so lahko noseče itd... 
+
+if (starost > 40){
+	prostorninaMehurja-= (starost-40)*2 ml; //ko se staramo, mormo čedalje bolj pogosto lulat
+}
+
+//koliko urina se sproducira v sekundi
+int kolicina = 0,01 ml; //to je urin, ki se ustvari iz drugih virov - iz vode, ki jo dobimo iz hrane in z dihanjem, predpostavimo, da okoli 1000 ml na dan
+
+//pol se pa premikamo po seznamu vnosa pijač (tistih, ki jih še nismo predelali v urin, za tiste predelane imamo drug seznam)
+
+int casPretvorbePijaceVLulanje = 10000;
+for (int i=0; i<seznam; i++){
+int kolicina2 = 0; // kok vsaka pijača prispeva k lulanju
+	if ((trenutni čas - čas popitja pijače) >= casPretvorbePijaceVLulanje){
+		pijačo zbrišemo iz tega seznama, ker je ne rabimo več - > je še zmerej v zgodovini
+		i++;
+	}
+	kolicina2 = pijaca.kolicina /casPretvorbePijaceVLulanje;
+
+	if (pijaca.diuretik == true && teža < 80 )
+		kolicina2*=1.2; //20% hitreje se pretvarja v urin
+	
+	else if (pijaca.diuretik == true && teža >= 80)
+		kolicina2*=1.1; //10% hitreje se pretvarja v urin -> če maš več kil, ta alkohol nate manj vpliva
+
+	kolicina+= kolicina2;
+	i++;
+}
+
+
+int sekundeDoLulanja = prostorninaMehurja/kolicina; //npr. 500/1,1 = 454,54 -> 1,26 ure do lulanja
+
+
+
