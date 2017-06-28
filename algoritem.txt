@@ -1,5 +1,7 @@
 ﻿
-int spol, starost, teza, prostorninaMehurja, urin, urinP,;
+int spol, starost, teza, prostorninaMehurja, urin, urinP;
+(nevemkakšentype) seznam; 
+//to je seznam pijač, ki smo ga spil. vsaka pijača mora met svoj int casPopitja, int kolicina in boolean diuretik
 int casPretvorbePijaceVLulanje = 10000; //kle sem si mal zmisnla, da vsaka pijača rabi 10000 sekund, da se pretvori v urin
 
 //PROSTORNINA MEHURJA
