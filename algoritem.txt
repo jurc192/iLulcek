@@ -1,5 +1,4 @@
 ﻿
-//ZAČETNI PARAMETRI
 
 //prostornina mehurja
 int prostorninaMehurjaMoski = 300 ml; //to ni zares volumen mehurja - ta je približno 500 ml, ampak napolnjenost mehurja, ko nas tišči lulat
@@ -13,7 +12,6 @@ if (starost > 40){
 int kolicina = 0,01 ml; //to je urin, ki se ustvari iz drugih virov - iz vode, ki jo dobimo iz hrane in z dihanjem, predpostavimo, da okoli 1000 ml na dan
 
 //pol se pa premikamo po seznamu vnosa pijač (tistih, ki jih še nismo predelali v urin, za tiste predelane imamo drug seznam)
-
 int casPretvorbePijaceVLulanje = 10000;
 for (int i=0; i<seznam; i++){
 int kolicina2 = 0; // kok vsaka pijača prispeva k lulanju
@@ -33,7 +31,7 @@ int kolicina2 = 0; // kok vsaka pijača prispeva k lulanju
 	i++;
 }
 
-
+//zadnji korak
 int sekundeDoLulanja = prostorninaMehurja/kolicina; //npr. 500/1,1 = 454,54 -> 1,26 ure do lulanja
 
 
