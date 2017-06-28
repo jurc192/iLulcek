@@ -1,12 +1,12 @@
 ﻿
-int spol, starost, teza, prostorninaMehurja;
+int spol, starost, teza, prostorninaMehurja, kolicina;
 
 //PROSTORNINA MEHURJA
 if (spol == 0) //moski
-	prostorninaMehurja = 300 ml; 
+	prostorninaMehurja = 300; //ml
 	//to ni zares volumen mehurja - ta je približno 500 ml, ampak napolnjenost mehurja, ko nas tišči lulat
 else
-	prostorninaMehurja = 250 ml; 
+	prostorninaMehurja = 250; //ml
 	//sicer naj bi oba spola imela približno enak velik mehur, a tu upoštevamo faktor, 
 	//da imajo ženske bolj "natlačene" organe, krajšo sečnico, večkrat dobijo vnetje mehurja, so lahko noseče itd... 
 
@@ -16,8 +16,8 @@ if (starost > 40){
 	//razlaga stevilk: 40 so leta, 2 so mililitri
 }
 
-//koliko urina se sproducira v sekundi
-int kolicina = 0,01 ml; //to je urin, ki se ustvari iz drugih virov - iz vode, ki jo dobimo iz hrane in z dihanjem, predpostavimo, da okoli 1000 ml na dan
+//KOLIKO URINA SE USTVARI V SEKUNDI IZ HRANE IN DIHANJA (predpostavimo, da okoli 1000 ml na dan)
+kolicina = 0,01; //ml
 
 //pol se pa premikamo po seznamu vnosa pijač (tistih, ki jih še nismo predelali v urin, za tiste predelane imamo drug seznam)
 int casPretvorbePijaceVLulanje = 10000;
