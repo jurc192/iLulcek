@@ -1,7 +1,7 @@
 ﻿
 int spol, starost, teza, prostorninaMehurja;
 
-//prostornina mehurja
+//PROSTORNINA MEHURJA
 if (spol == 0) //moski
 	prostorninaMehurja = 300 ml; 
 	//to ni zares volumen mehurja - ta je približno 500 ml, ampak napolnjenost mehurja, ko nas tišči lulat
@@ -11,7 +11,9 @@ else
 	//da imajo ženske bolj "natlačene" organe, krajšo sečnico, večkrat dobijo vnetje mehurja, so lahko noseče itd... 
 
 if (starost > 40){
-	prostorninaMehurja-= (starost-40)*2 ml; //ko se staramo, mormo čedalje bolj pogosto lulat
+	prostorninaMehurja-= (starost-40)*2; 
+	//ko se staramo, mormo čedalje bolj pogosto lulat
+	//razlaga stevilk: 40 so leta, 2 so mililitri
 }
 
 //koliko urina se sproducira v sekundi
