@@ -93,12 +93,11 @@ Spremenit barvo ikon? Apply theme? Boljše kot setImageResource, bi blo nrdit Dr
 // If that's a concern, consider using setImageDrawable(android.graphics.drawable.Drawable) or setImageBitmap(android.graphics.Bitmap) and BitmapFactory instead.
 
 TODO: 
+- naredi add-drink activity [DONW]
+- spremeni adapter v history [DONE]
 - zamenjaj hard-codirane stringe za string resource
-- naredi add-drink activity
 - popravi barve ikon
-- dodaj ikone v history
-- spremeni adapter v history
-
+- dodaj ikone v history [KAO-DONE]
 - ufuraj counter
 
 
