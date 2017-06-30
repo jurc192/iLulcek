@@ -1,14 +1,60 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context="com.student.jure.ilulcek.Fragments.TodayFragment">
+
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/fragment_1_danes" />
+        android:layout_height="wrap_content"
+        android:id="@+id/timerView"
+        android:text="@string/timerText"
+        android:textSize="50sp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text1"
+        android:text="@string/etaText1"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text2"
+        android:text="@string/etaText2"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn0"
+        android:text="@string/peeText"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        style="@style/Widget.AppCompat.Button.Borderless" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_add_black_24dp"
+        app:fabSize="normal"
+        app:rippleColor="@color/colorAccent"/>
+
 
 </LinearLayout>
