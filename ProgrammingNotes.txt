@@ -92,7 +92,14 @@ Spremenit barvo ikon? Apply theme? Boljše kot setImageResource, bi blo nrdit Dr
 // This does Bitmap reading and decoding on the UI thread, which can cause a latency hiccup. 
 // If that's a concern, consider using setImageDrawable(android.graphics.drawable.Drawable) or setImageBitmap(android.graphics.Bitmap) and BitmapFactory instead.
 
-TODO: zamenjaj hard-codirane stringe za string resource
+TODO: 
+- zamenjaj hard-codirane stringe za string resource
+- naredi add-drink activity
+- popravi barve ikon
+- dodaj ikone v history
+- spremeni adapter v history
+
+- ufuraj counter
 
 
 

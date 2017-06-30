@@ -20,10 +20,6 @@ import com.student.jure.ilulcek.R;
 
 public class SettingsFragment extends Fragment {
 
-
-    private Context contextThemeWrapper;
-    private LayoutInflater localInflater;
-
     //Fix duplicating getActivity() for context
     //TODO: create BUNDLE and send it via get/setArguments() instead constructor
     public SettingsFragment() {}
@@ -33,8 +29,8 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // A context wrapper that allows you to modify or replace the theme of the wrapped context.
-        contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.FragmentTheme);
-        localInflater = inflater.cloneInContext(contextThemeWrapper);
+        Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.FragmentTheme);
+        LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
         return localInflater.inflate(R.layout.fragment_settings, container, false);
     }
 

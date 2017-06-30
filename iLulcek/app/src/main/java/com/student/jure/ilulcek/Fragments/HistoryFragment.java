@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.student.jure.ilulcek.Adapters.HistoryAdapter;
 import com.student.jure.ilulcek.Adapters.MyCursorAdapter;
 import com.student.jure.ilulcek.MyDatabaseHelper;
 import com.student.jure.ilulcek.R;
@@ -45,13 +46,10 @@ public class HistoryFragment extends Fragment {
 
         // Database query
         Cursor myCursor = getHistoryData();
-//        String[] from = {"drink", "qty", "time"};
-//        int[] to = {R.id.list_text1, R.id.list_text2, R.id.list_text3};
-//        SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(getActivity(), R.layout.list_row_history, myCursor, from, to, 0);
+        myCursor.moveToFirst();     // zakaj teh premikov kurzorja ne hendla BaseAdapter?
 
-        // TODO: spremeni v custom BASE adapter
-        MyCursorAdapter myAdapter = new MyCursorAdapter(getActivity(), myCursor);
-        lv.setAdapter(myAdapter);
+        HistoryAdapter historyAdapter = new HistoryAdapter(getActivity(), myCursor);
+        lv.setAdapter(historyAdapter);
     }
 
     /** My database query for HISTORY entries **/
