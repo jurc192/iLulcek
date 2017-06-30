@@ -1,4 +1,4 @@
-package com.student.jure.ilulcek;
+package com.student.jure.ilulcek.Fragments;
 
 
 import android.content.Context;
@@ -9,14 +9,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.student.jure.ilulcek.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DanesFragment extends Fragment {
+public class TodayFragment extends Fragment {
 
 
-    public DanesFragment() {
+    public TodayFragment() {
         // Required empty public constructor
     }
 
@@ -35,7 +37,7 @@ public class DanesFragment extends Fragment {
         LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
 
         // inflate the layout using the cloned inflater, not default inflater
-        return localInflater.inflate(R.layout.fragment_danes, container, false);
+        return localInflater.inflate(R.layout.fragment_today, container, false);
     }
 
 }

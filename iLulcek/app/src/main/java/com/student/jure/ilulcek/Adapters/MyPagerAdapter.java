@@ -1,9 +1,13 @@
-package com.student.jure.ilulcek;
+package com.student.jure.ilulcek.Adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.util.Log;
+
+import com.student.jure.ilulcek.Fragments.TodayFragment;
+import com.student.jure.ilulcek.Fragments.SettingsFragment;
+import com.student.jure.ilulcek.Fragments.HistoryFragment;
 
 
 public class MyPagerAdapter extends FragmentPagerAdapter {
@@ -25,15 +29,15 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                NastavitveFragment frag1 = new NastavitveFragment();
+                SettingsFragment frag1 = new SettingsFragment();
                 return frag1;
 
             case 1:
-                DanesFragment frag2 = new DanesFragment();
+                TodayFragment frag2 = new TodayFragment();
                 return frag2;
 
             case 2:
-                ZgodovinaFragment frag3 = new ZgodovinaFragment();
+                HistoryFragment frag3 = new HistoryFragment();
                 return frag3;
 
             default:

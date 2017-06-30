@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.os.Bundle;
 
+import com.student.jure.ilulcek.Adapters.MyPagerAdapter;
+
 
 public class MainActivity extends AppCompatActivity {
 

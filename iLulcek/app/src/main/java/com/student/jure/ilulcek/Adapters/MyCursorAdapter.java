@@ -1,4 +1,4 @@
-package com.student.jure.ilulcek;
+package com.student.jure.ilulcek.Adapters;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.student.jure.ilulcek.R;
 
 
 public class MyCursorAdapter extends CursorAdapter {
@@ -18,7 +20,7 @@ public class MyCursorAdapter extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup parent) {
 
-        return LayoutInflater.from(context).inflate(R.layout.list_row, parent, false);
+        return LayoutInflater.from(context).inflate(R.layout.list_row_history, parent, false);
 
     }
 

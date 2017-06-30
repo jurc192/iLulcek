@@ -1,14 +1,15 @@
-package com.student.jure.ilulcek;
+package com.student.jure.ilulcek.Adapters;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.student.jure.ilulcek.R;
 
 
 public class SettingsAdapter extends BaseAdapter {

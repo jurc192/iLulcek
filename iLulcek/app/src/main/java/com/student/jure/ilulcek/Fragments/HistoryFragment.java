@@ -1,4 +1,4 @@
-package com.student.jure.ilulcek;
+package com.student.jure.ilulcek.Fragments;
 
 
 import android.content.Context;
@@ -6,17 +6,20 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.student.jure.ilulcek.Adapters.MyCursorAdapter;
+import com.student.jure.ilulcek.MyDatabaseHelper;
+import com.student.jure.ilulcek.R;
 
-public class ZgodovinaFragment extends Fragment {
 
-    public ZgodovinaFragment() {
+public class HistoryFragment extends Fragment {
+
+    public HistoryFragment() {
         // Required empty public constructor
     }
 
@@ -30,7 +33,7 @@ public class ZgodovinaFragment extends Fragment {
 
         final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.FragmentTheme);
         LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
-        return localInflater.inflate(R.layout.fragment_zgodovina, container, false);
+        return localInflater.inflate(R.layout.fragment_history, container, false);
 
     }
 
@@ -44,7 +47,7 @@ public class ZgodovinaFragment extends Fragment {
         Cursor myCursor = getHistoryData();
 //        String[] from = {"drink", "qty", "time"};
 //        int[] to = {R.id.list_text1, R.id.list_text2, R.id.list_text3};
-//        SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(getActivity(), R.layout.list_row, myCursor, from, to, 0);
+//        SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(getActivity(), R.layout.list_row_history, myCursor, from, to, 0);
 
         // TODO: spremeni v custom BASE adapter
         MyCursorAdapter myAdapter = new MyCursorAdapter(getActivity(), myCursor);
