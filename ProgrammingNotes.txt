@@ -88,7 +88,9 @@ v getSettingsData() preveri če se query uspešno izvede!
 Problem pri nastavitvah je, da imam EN row iz DBja -> preslika v en row lista.
 Jst hočem imet SEZNAM DBja - lažje bi blo s kakšnim arrayem al sharedPref al kaj...
 
-
+Spremenit barvo ikon? Apply theme? Boljše kot setImageResource, bi blo nrdit Drawable in pol naprej.
+// This does Bitmap reading and decoding on the UI thread, which can cause a latency hiccup. 
+// If that's a concern, consider using setImageDrawable(android.graphics.drawable.Drawable) or setImageBitmap(android.graphics.Bitmap) and BitmapFactory instead.
 
 
 

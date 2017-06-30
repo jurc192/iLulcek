@@ -2,10 +2,12 @@ package com.student.jure.ilulcek;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -45,6 +47,7 @@ public class SettingsAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         String[] titles = {"SEX", "AGE", "WEIGHT"};
+        int[] icons = {R.drawable.ic_wc_black_24dp, R.drawable.ic_cake_black_24dp, R.drawable.ic_kitchen_black_24dp};
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null) {
@@ -55,13 +58,17 @@ public class SettingsAdapter extends BaseAdapter {
             // Use the root view to find other views
             TextView tv1 = (TextView) row.findViewById(R.id.list_text1);
             TextView tv2 = (TextView) row.findViewById(R.id.list_text2);
+            ImageView iv1 = (ImageView) row.findViewById(R.id.list_icon);
 
             // Set the values for each view
             String text1 = titles[position];
             String text2 = cursor.getString(position+1);    //preskoci ID
 
+
             tv1.setText(text1);
             tv2.setText(text2);
+            iv1.setImageResource(icons[position]);
+            // TODO: spremeni barvo ikonc, uporabi raje setDrawableResource
 
             return row;
 

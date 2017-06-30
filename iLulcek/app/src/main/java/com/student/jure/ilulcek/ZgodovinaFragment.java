@@ -46,6 +46,7 @@ public class ZgodovinaFragment extends Fragment {
 //        int[] to = {R.id.list_text1, R.id.list_text2, R.id.list_text3};
 //        SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(getActivity(), R.layout.list_row, myCursor, from, to, 0);
 
+        // TODO: spremeni v custom BASE adapter
         MyCursorAdapter myAdapter = new MyCursorAdapter(getActivity(), myCursor);
         lv.setAdapter(myAdapter);
     }
