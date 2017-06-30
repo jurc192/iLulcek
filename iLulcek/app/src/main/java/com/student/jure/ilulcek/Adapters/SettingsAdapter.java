@@ -46,7 +46,7 @@ public class SettingsAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        String[] titles = {"SEX", "AGE", "WEIGHT"};
+        String[] titles = {"SPOL", "STAROST", "TEŽA"};
         int[] icons = {R.drawable.ic_wc_black_24dp, R.drawable.ic_cake_black_24dp, R.drawable.ic_kitchen_black_24dp};
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 

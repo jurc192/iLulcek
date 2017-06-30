@@ -41,7 +41,7 @@ public class WeightDialogFragment extends DialogFragment {
         NumberPicker numPicker = new NumberPicker(contextTheme);
         numPicker.setMinValue(1);
         numPicker.setMaxValue(300);
-        numPicker.setValue(70);
+        numPicker.setValue(85);
         builder.setView(numPicker);
 
         return builder.create();

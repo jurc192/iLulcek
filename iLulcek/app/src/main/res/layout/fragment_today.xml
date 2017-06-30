@@ -39,7 +39,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn0"
+        android:id="@+id/peeBtn"
         android:text="@string/peeText"
         android:textSize="20sp"
         android:layout_gravity="center"
@@ -47,7 +47,7 @@
         style="@style/Widget.AppCompat.Button.Borderless" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

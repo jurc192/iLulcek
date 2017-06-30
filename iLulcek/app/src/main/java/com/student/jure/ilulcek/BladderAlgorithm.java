@@ -1,3 +1,8 @@
+// To je copy paste countdown timerja, ki sem ga spisal na začetku
+// Tukaj bo nekoč pravi algoritem mehurja (odštevanje/prištevanje časa glede na popite pijače)
+// TODO: vstavi vseto v MainActivity trenutnega projekta
+
+
 //package com.student.jure.ilulcek;
 //
 //import android.content.res.Resources;
@@ -54,7 +59,6 @@
 //                long secs = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(mins);
 //                // bi bilo tukaj boljše če bi dal npr. MILISECONS.toMinutes - (hours*60)?
 //
-//                // TODO: Fix this string format crap
 //                String timerText = String.format("%02dh : %02dm : %02ds", hours, mins, secs);
 //                timerView.setText(timerText);
 //            }

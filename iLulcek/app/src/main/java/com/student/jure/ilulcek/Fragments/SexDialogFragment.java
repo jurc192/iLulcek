@@ -23,7 +23,6 @@ public class SexDialogFragment extends DialogFragment {
         Context contextTheme = new ContextThemeWrapper(getActivity(), R.style.FragmentTheme);
         AlertDialog.Builder builder = new AlertDialog.Builder(contextTheme);
 
-        Cursor cursor = getSettingsData();
 
         builder.setTitle("Spol");
         builder.setPositiveButton("POTRDI", new DialogInterface.OnClickListener() {

@@ -53,6 +53,7 @@ public class AgeDialogFragment extends DialogFragment {
 
 
     /** My database query for SETTINGS entries **/
+    // Copy-paste metoda, popravi!
     public Cursor getSettingsData() {
 
         Context cont = getActivity();

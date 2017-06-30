@@ -43,7 +43,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
     private static final String DROP_TABLE_ZGODOVINA = "DROP TABLE IF EXISTS" + TABLE_ZGODOVINA;
 
 
-    // TODO: implement contract class and get rid of SQL inserts
+    // TODO: implement contract class and get rid of this SQL inserts
     // TEMPORARY SOLUTION
     private static final String INSERT_ZGODOVINA = "INSERT INTO " + TABLE_ZGODOVINA
             +" ("+DRINK+", "+QTY+", "+DATE+", "+TIME+") VALUES ('voda', 0.33, '22.06.2017', '16:27');";
@@ -54,8 +54,14 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
     private static final String INSERT_ZGODOVINA3 = "INSERT INTO " + TABLE_ZGODOVINA
             +" ("+DRINK+", "+QTY+", "+DATE+", "+TIME+") VALUES ('pivo', 0.50, '22.06.2017', '15:30');";
 
+    private static final String INSERT_ZGODOVINA4 = "INSERT INTO " + TABLE_ZGODOVINA
+            +" ("+DRINK+", "+QTY+", "+DATE+", "+TIME+") VALUES ('voda', 0.50, '22.06.2017', '17:30');";
+
+    private static final String INSERT_ZGODOVINA5 = "INSERT INTO " + TABLE_ZGODOVINA
+            +" ("+DRINK+", "+QTY+", "+DATE+", "+TIME+") VALUES ('kava', 0.10, '22.06.2017', '07:30');";
+
     private static final String INSERT_NASTAVITVE = "INSERT INTO " + TABLE_NASTAVITVE
-            +" ("+SEX+", "+AGE+", "+WEIGHT+") VALUES ('m', 20, 85);";
+            +" ("+SEX+", "+AGE+", "+WEIGHT+") VALUES ('moški', 20, 85);";
 
 
     public MyDatabaseHelper(Context context) {
@@ -73,6 +79,8 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
             db.execSQL(INSERT_ZGODOVINA);
             db.execSQL(INSERT_ZGODOVINA2);
             db.execSQL(INSERT_ZGODOVINA3);
+            db.execSQL(INSERT_ZGODOVINA4);
+            db.execSQL(INSERT_ZGODOVINA5);
             System.out.println("CREATED TABLES!");
 
         } catch (SQLException e) {

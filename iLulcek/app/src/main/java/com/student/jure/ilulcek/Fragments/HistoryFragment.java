@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.student.jure.ilulcek.Adapters.HistoryAdapter;
-import com.student.jure.ilulcek.Adapters.MyCursorAdapter;
 import com.student.jure.ilulcek.MyDatabaseHelper;
 import com.student.jure.ilulcek.R;
 
@@ -46,7 +45,7 @@ public class HistoryFragment extends Fragment {
 
         // Database query
         Cursor myCursor = getHistoryData();
-        myCursor.moveToFirst();     // zakaj teh premikov kurzorja ne hendla BaseAdapter?
+        myCursor.moveToFirst(); // tega ne rabim, right?
 
         HistoryAdapter historyAdapter = new HistoryAdapter(getActivity(), myCursor);
         lv.setAdapter(historyAdapter);

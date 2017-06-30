@@ -2,19 +2,25 @@ package com.student.jure.ilulcek.Fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ListView;
 
+import com.student.jure.ilulcek.Adapters.SettingsAdapter;
+import com.student.jure.ilulcek.AddActivity;
 import com.student.jure.ilulcek.R;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TodayFragment extends Fragment {
 
 
@@ -29,15 +35,36 @@ public class TodayFragment extends Fragment {
 
         // A context wrapper that allows you to modify or replace the theme of the wrapped context.
         final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.FragmentTheme);
-
-        // LayoutInflater = > Instantiates a layout XML file into its corresponding View objects.
-        // Create a copy of the existing LayoutInflater object, with the copy pointing
-        // to a different Context than the original. This is used by ContextThemeWrapper to create
-        // a new LayoutInflater to go along with the new Context theme.
         LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
-
-        // inflate the layout using the cloned inflater, not default inflater
         return localInflater.inflate(R.layout.fragment_today, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        // PEE NOW BUTTON STUFF
+        Button peeBtn = (Button) getView().findViewById(R.id.peeBtn);
+        peeBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // LULAJ ZDAJ, reset counterja
+            }
+        });
+
+
+        // ADD DRINK BUTTON STUFF
+        FloatingActionButton addBtn = (FloatingActionButton) getView().findViewById(R.id.addBtn);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }
