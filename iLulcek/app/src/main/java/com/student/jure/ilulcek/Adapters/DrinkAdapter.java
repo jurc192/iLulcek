@@ -2,6 +2,8 @@ package com.student.jure.ilulcek.Adapters;
 
 
 import android.content.Context;
+import android.database.Cursor;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,34 +11,39 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.student.jure.ilulcek.AddActivity;
 import com.student.jure.ilulcek.R;
 
 public class DrinkAdapter extends BaseAdapter{
 
     private Context context;
     private int numItems;
-    private String[] drinks= {"Drink1", "Drink2", "Drink1", "Drink1", "Drink1", "Drink1", "Drink1", "Drink1", "Drink1",};
+    private Cursor cursor;
+    private String[] drinks= {"Dr", "Gazirana pijača", "Drink1", "Drink1", "Drink1", "Drink1", "Drink1", "Drink1", "Drink1",};
+    private String text;
 
-    public DrinkAdapter(Context cont) {
+    public DrinkAdapter(Cursor cur, Context cont) {
 
         this.context = cont;
+        this.cursor = cur;
         this.numItems = 9;
 
     }
 
+
     @Override
     public int getCount() {
-        return 9;
+        return numItems;
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return cursor.getString(0);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return cursor.getInt(0);
     }
 
     @Override
@@ -50,10 +57,19 @@ public class DrinkAdapter extends BaseAdapter{
 
             ImageView icon = (ImageView) item.findViewById(R.id.drinkIcon);
             TextView tv = (TextView) item.findViewById(R.id.drinkText);
-
             icon.setImageResource(R.drawable.ic_local_bar_black_24dp);
-            tv.setText(drinks[position]);
+            cursor.moveToFirst();
+            for (int i=0; i<position; i++) {
+                cursor.moveToNext();
+            }
+           // String text = cursor.getString(position+position*7);  //preskoci ID
+            String text = cursor.getString(0);  //preskoci ID
 
+            String pos = Integer.toString(position);
+            Log.i("position", pos);
+            Log.i("LOG", text);
+            //String text = drinks[position];
+            tv.setText(text);
             return item;
 
 

@@ -1,12 +1,16 @@
 package com.student.jure.ilulcek.Fragments;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.view.ContextThemeWrapper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.student.jure.ilulcek.Adapters.SettingsAdapter;
+import com.student.jure.ilulcek.MainActivity;
 import com.student.jure.ilulcek.MyDatabaseHelper;
 import com.student.jure.ilulcek.R;
 
@@ -58,28 +63,49 @@ public class SettingsFragment extends Fragment {
                     // Sex dialog box
                     case 0:
                         SexDialogFragment sexDialog = new SexDialogFragment();
+                        sexDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                            @Override
+                            public void onDismiss(DialogInterface dialog) {
+                                freshiraj();
+                            }
+                        });
+
                         sexDialog.show(ft, "sexFragment");
                         break;
+
 
                     // Age dialog box
                     case 1:
                         AgeDialogFragment ageDialog = new AgeDialogFragment();
+                        ageDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                            @Override
+                            public void onDismiss(DialogInterface dialog) {
+                                freshiraj();
+                            }
+                        });
                         ageDialog.show(ft, "ageFragment");
                         break;
 
                     // Weight dialog box
                     case 2:
                         WeightDialogFragment weightDialog = new WeightDialogFragment();
+                        weightDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                            @Override
+                            public void onDismiss(DialogInterface dialog) {
+                                freshiraj();
+                            }
+                        });
                         weightDialog.show(ft, "weightFragment");
                         break;
 
                 }
+
             }
 
         });
 
-
     }
+
 
     /** My database query for SETTINGS entries **/
     public Cursor getSettingsData() {
@@ -89,6 +115,13 @@ public class SettingsFragment extends Fragment {
         SQLiteDatabase db = myDBhelper.getWritableDatabase();
         Cursor cursor = db.query("nastavitve", null, null, null, null, null, null);
 
+
         return cursor;
+    }
+
+
+    public void freshiraj() {
+
+        getFragmentManager().beginTransaction().detach(this).attach(this).commit();
     }
 }

@@ -3183,7 +3183,7 @@ containing a value of this type.
         public static final int fill_horizontal=0x7f0d003d;
         public static final int fill_vertical=0x7f0d0033;
         public static final int fixed=0x7f0d0046;
-        public static final int gridview=0x7f0d007b;
+        public static final int gridview=0x7f0d007a;
         public static final int history_icon=0x7f0d0094;
         public static final int home=0x7f0d0004;
         public static final int homeAsUp=0x7f0d001c;
@@ -3206,7 +3206,7 @@ containing a value of this type.
         public static final int list_text3=0x7f0d0098;
         public static final int listview=0x7f0d008b;
         public static final int listview2=0x7f0d008c;
-        public static final int main_content=0x7f0d007c;
+        public static final int main_content=0x7f0d007b;
         public static final int masked=0x7f0d00b2;
         public static final int media_actions=0x7f0d00a0;
         public static final int middle=0x7f0d0040;
@@ -3283,7 +3283,7 @@ containing a value of this type.
         public static final int title=0x7f0d0051;
         public static final int titleDividerNoCustom=0x7f0d0060;
         public static final int title_template=0x7f0d005e;
-        public static final int toolbar=0x7f0d007a;
+        public static final int toolbar=0x7f0d007c;
         public static final int top=0x7f0d0037;
         public static final int topPanel=0x7f0d005d;
         public static final int touch_outside=0x7f0d0081;
