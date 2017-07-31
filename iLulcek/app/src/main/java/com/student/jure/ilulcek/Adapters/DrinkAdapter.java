@@ -58,17 +58,13 @@ public class DrinkAdapter extends BaseAdapter{
             ImageView icon = (ImageView) item.findViewById(R.id.drinkIcon);
             TextView tv = (TextView) item.findViewById(R.id.drinkText);
             icon.setImageResource(R.drawable.ic_local_bar_black_24dp);
+
             cursor.moveToFirst();
             for (int i=0; i<position; i++) {
                 cursor.moveToNext();
             }
-           // String text = cursor.getString(position+position*7);  //preskoci ID
-            String text = cursor.getString(0);  //preskoci ID
 
-            String pos = Integer.toString(position);
-            Log.i("position", pos);
-            Log.i("LOG", text);
-            //String text = drinks[position];
+            String text = cursor.getString(0);  //preskoci ID
             tv.setText(text);
             return item;
 
